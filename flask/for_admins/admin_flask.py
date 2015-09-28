@@ -17,11 +17,21 @@ session = DBSession()
 ####################################################
 ## DB Session has been started from here ...
 ###################################################
-app = Flask(__name__,template_folder="./admin_templates/")
+app = Flask(__name__,template_folder="./admin_templates/",static_url_path="/static/")
+
+@app.route('/common.css')
+def return_css():
+	return app.send_static_file('common.css')
+
 @app.route('/admin')
 @app.route('/admin/')
 def admin_page():
 	return render_template('admin_index.html')
+
+@app.route('/admin/add-product')
+@app.route('/admin/add-product/')
+def admin_add_page():
+	return render_template('add_product.html')
 
 @app.route('/admin/add-product/t-shirt/test')
 def add_test_tees():

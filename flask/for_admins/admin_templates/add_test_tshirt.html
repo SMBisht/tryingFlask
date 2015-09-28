@@ -1,43 +1,181 @@
-<form method="post" action="add_product_in_db">
-	<input type="hidden" name="product_type" value="tshirt" />
-	<input type="hidden" name="db_type" value="test" />
-	
-	<label for="t_gender_id">T-shirt for:</label>
-	<select name="t_gender" id="t_gender_id">
-		<option value="men">Men</option>
-		<option value="women">Women</option>
-		<option value="both seperately">Both Separately</option>
-		<option value="unisex">Unisex</option>
-		<option value="couples">Couples</option>
-	</select>
-	<label for="t_cat_id">Choose a Category:</label>
-	<select name="t_cat" id="t_cat_id">
-		<option value="tvshow">TV Show</option>
-	</select>
-	<label for="t_sub_id">Choose a Sub-Category:</label>
-	<select name="t_sub" id="t_sub_id">
-		<option value="friends">Friends</option>
-	</select>
-	<label for="t_title_id">Title for T-shirt:</label>
-	<input type="text" placeholder="title for product" name="t_title" id="t_title_id" />
-	<label for="t_description_id">Description for T-shirt:</label>
-	<textarea placeholder="description of product" name="t_description" id="t_description_id"></textarea>
-
-	<hr/>
-	<label for="t_min_price_id">Minimum Price:</label>
-	<input type="number" name="t_min_price" id="t_min_price_id" placeholder="minimum price for this comodity"/>
-		<label for="t_max_price_id">Maximum Price:</label>
-	<input type="number" name="t_max_price" id="t_max_price_id" placeholder="maximum price for this comodity"/>
-	<label for="t_launch_price_id">Launch Price:</label>
-	<input type="number" name="t_launch_price" id="t_launch_price_id" placeholder="launch price for this comodity"/>
-
-	<label for="t_small_url_id">Small Size URL:</label>
-	<input type="url" name="t_small_url" id="t_small_url_id" placeholder="url of image for t-shirt to show on mobiles"/>
-	<label for="t_medium_url_id">Medium Size URL:</label>
-	<input type="url" name="t_medium_url" id="t_medium_url_id" placeholder="url of image for t-shirt to show on tablets an some desktops"/>
-	<label for="t_large_url_id">Large Size URL:</label>
-	<input type="url" name="t_large_url" id="t_large_url_id" placeholder="url of image for large screens"/>
-
-	<input type="submit" value="create the test product!">
-	
-</form>
+<html>
+<head>
+<link href="/common.css" rel="stylesheet" type="text/css">
+<title>Add Test T-shirt</title>
+<style>
+	.row{padding:8px 0px 8px 0px;}
+	.check_btn{position:absolute;left:-99999px; }
+	.check_circle{
+		width:15px;
+		height:15px;
+		border:5px dotted red;
+		border-radius:50%;
+		display:inline-block;
+		background-color:white;
+		transition:background-color 2s;
+	}
+	#black_id:checked ~ div{ background-color:green;border-color:green;}
+</style>
+</head>
+<body>
+	<div class="container">
+		<form method="post" action="add_product_in_db">
+			<input type="hidden" name="product_type" value="tshirt" />
+			<input type="hidden" name="db_type" value="test" />
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="t_gender_id">T-shirt for:</label>
+					<select name="t_gender" id="t_gender_id">
+						<option value="men">Men</option>
+						<option value="women">Women</option>
+						<option value="both seperately">Both Separately</option>
+						<option value="unisex">Unisex</option>
+						<option value="couples">Couples</option>
+					</select>
+				</div>
+				<div class="col-lg-4 col-lg-offset-1">
+					<label for="t_cat_id">Choose a Category:</label>
+					<select name="t_cat" id="t_cat_id">
+						<option value="tvshow">TV Show</option>
+					</select>
+				</div>
+				<div class="col-lg-4">
+					<label for="t_sub_id">Choose a Sub-Category:</label>
+					<select name="t_sub" id="t_sub_id">
+						<option value="friends">Friends</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<label for="t_title_id" class="col-lg-2">Title for T-shirt:</label>
+				<input type="text" class="col-lg-7" placeholder="title for product" name="t_title" id="t_title_id" />
+			</div>
+			<div class="row">
+				<label for="t_description_id"i class="col-lg-2">Description for T-shirt:</label>
+				<textarea class="col-lg-7" placeholder="description of product" name="t_description" id="t_description_id"></textarea>
+			</div>
+			<hr/>
+			<div class="row">
+				<label class="col-lg-1" for="t_min_price_id">Min-Price:</label>
+				<input class="col-lg-2" type="number" name="t_min_price" id="t_min_price_id" placeholder="default: CP+100"/>
+				<label class="col-lg-1" for="t_max_price_id">Max-Price:</label>
+				<input class="col-lg-3" type="number" name="t_max_price" id="t_max_price_id" placeholder="default: max(CP+150,3*CP)"/>
+				<label class="col-lg-1" for="t_launch_price_id">Price:</label>
+				<input class="col-lg-3" type="number" name="t_launch_price" id="t_launch_price_id" placeholder="default: max(CP+150,2*CP)"/>
+			</div>
+			<div class="row">
+				<label class="col-lg-2" for="t_small_url_id">Small Size URL:</label>
+				<input class="col-lg-7" type="url" name="t_small_url" id="t_small_url_id" placeholder="url of image for t-shirt to show on mobiles"/>
+			</div>
+			<div class="row">
+				<label class="col-lg-2" for="t_medium_url_id">Medium Size URL:</label>
+				<input class="col-lg-7" type="url" name="t_medium_url" id="t_medium_url_id" placeholder="url of image for t-shirt to show on tablets an some desktops"/>
+			</div>
+			<div class="row">
+				<label class="col-lg-2" for="t_large_url_id">Large Size URL:</label>
+				<input class="col-lg-7" type="url" name="t_large_url" id="t_large_url_id" placeholder="url of image for large screens"/>
+			</div>
+			<hr/>
+			<div class="row">
+					<span>Select the Color(s).<br/></span>
+					<div style="border-bottom:3px solid black;" class="col-lg-2">
+						<label for="black_id" class="xl">Black</label>
+						<input id="black_id" class="check_btn" type="checkbox" name="colors[]" value="black" />
+						<div class="check_circle"></div>
+					</div>
+					<!--
+					White
+					<input type="checkbox" name="colors[]" value="white" />
+					Red
+					<input type="checkbox" name="colors[]" value="red" />
+					Yellow
+					<input type="checkbox" name="colors[]" value="yellow" />
+					Pink
+					<input type="checkbox" name="colors[]" value="pink" />
+					Blue
+					<input type="checkbox" name="colors[]" value="blue" />
+					Olive
+					<input type="checkbox" name="colors[]" value="olive" />
+					Prussian Blue
+					<input type="checkbox" name="colors[]" value="prussian_blue" />
+					Green
+					<input type="checkbox" name="colors[]" value="green" />
+					Mint
+					<input type="checkbox" name="colors[]" value="mint" />
+					Maroon
+					<input type="checkbox" name="colors[]" value="maroon" />
+<div class="tees_opt">
+					<span>Select the Material.</span>
+					<select name="material">
+						<option value="none">Choose Material-</option>
+						<option value="cotton">Cotton</option>
+						<option value="linen">Linen</option>
+						<option value="polyester">Polyester</option>
+						<option value="rayon">Rayon</option>
+						<option value="polyester">Blends</option>
+					</select>
+				</div>
+				<div class="tees_opt">
+					<span>Select the Weave.</span>
+					<select name="weaves">
+						<option value="none">Choose a Weave</option>
+						<option value="plain">Plain Weave Cotton</option>
+						<option value="end_on_end">End on End Weave</option>
+						<option value="voile">Voile Weave</option>
+						<option value="twill">Twill Weave</option>
+						<option value="oxford">Oxford Weave</option>
+					</select>
+				</div>
+				<div class="tees_opt">
+					<span>Select the Fabric.</span>
+					<select name="fabric">
+						<option value="plain">Choose a Fabric</option>
+						<option value="burn_out">Burn Out</option>
+						<option value="combed_cotton">Combed Cotton</option>
+						<option value="jersey">Jersey</option>
+						<option value="linen">Linen</option>
+						<option value="modal">Modal</option>
+						<option value="organic_cotton">Organic Cotton</option>
+						<option value="pigment_dyed">Pigment Dyed</option>
+						<option value="pima_supima">Pima, Supima</option>
+						<option value="polyester">Polyester</option>
+						<option value="rayon">Rayon</option>
+						<option value="rib_knit">Rib Knit</option>
+						<option value="slub">Slub</option>
+					</select>
+				</div>
+				<div class="tees_opt">
+					<span>Select the Neck Type.</span>
+					<select name="neck">
+						<option value="none">Choose a Neck/Neckline</option>
+						<option value="round_neck">Round Neck</option>
+						<option value="v_neck">V Neck</option>
+						<option value="hooded">Hooded T-Shirts</option>
+					</select>
+				</div>
+				<div class="tees_opt">
+					<span>Select Sleve Type.</span>
+					<select name="sleeves">
+						<option value="none">Choose Sleeve</option>
+						<option value="plain">Half Sleeves</option>
+						<option value="end_on_end">Full Sleeves</option>
+						<option value="voile">Sleeveless</option>
+					</select>
+				</div>
+				<div class="tees_opt">
+					<span>Select Fit.</span>
+					<select name="fit">
+						<option value="none">Choose Fit</option>
+						<option value="plain">Regular</option>
+						<option value="end_on_end">Slim</option>
+						<option value="voile">Skinny</option>
+					</select>
+				</div>
+					-->
+			</div>
+			<input type="submit" value="create the test product!">
+			
+		</form>
+	</div>
+</body>
+</html>
