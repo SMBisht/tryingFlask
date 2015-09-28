@@ -1,0 +1,43 @@
+<form method="post" action="add_product_in_db">
+	<input type="hidden" name="product_type" value="tshirt" />
+	<input type="hidden" name="db_type" value="test" />
+	
+	<label for="t_gender_id">T-shirt for:</label>
+	<select name="t_gender" id="t_gender_id">
+		<option value="men">Men</option>
+		<option value="women">Women</option>
+		<option value="both seperately">Both Separately</option>
+		<option value="unisex">Unisex</option>
+		<option value="couples">Couples</option>
+	</select>
+	<label for="t_cat_id">Choose a Category:</label>
+	<select name="t_cat" id="t_cat_id">
+		<option value="tvshow">TV Show</option>
+	</select>
+	<label for="t_sub_id">Choose a Sub-Category:</label>
+	<select name="t_sub" id="t_sub_id">
+		<option value="friends">Friends</option>
+	</select>
+	<label for="t_title_id">Title for T-shirt:</label>
+	<input type="text" placeholder="title for product" name="t_title" id="t_title_id" />
+	<label for="t_description_id">Description for T-shirt:</label>
+	<textarea placeholder="description of product" name="t_description" id="t_description_id"></textarea>
+
+	<hr/>
+	<label for="t_min_price_id">Minimum Price:</label>
+	<input type="number" name="t_min_price" id="t_min_price_id" placeholder="minimum price for this comodity"/>
+		<label for="t_max_price_id">Maximum Price:</label>
+	<input type="number" name="t_max_price" id="t_max_price_id" placeholder="maximum price for this comodity"/>
+	<label for="t_launch_price_id">Launch Price:</label>
+	<input type="number" name="t_launch_price" id="t_launch_price_id" placeholder="launch price for this comodity"/>
+
+	<label for="t_small_url_id">Small Size URL:</label>
+	<input type="url" name="t_small_url" id="t_small_url_id" placeholder="url of image for t-shirt to show on mobiles"/>
+	<label for="t_medium_url_id">Medium Size URL:</label>
+	<input type="url" name="t_medium_url" id="t_medium_url_id" placeholder="url of image for t-shirt to show on tablets an some desktops"/>
+	<label for="t_large_url_id">Large Size URL:</label>
+	<input type="url" name="t_large_url" id="t_large_url_id" placeholder="url of image for large screens"/>
+
+	<input type="submit" value="create the test product!">
+	
+</form>
