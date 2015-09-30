@@ -1,5 +1,82 @@
-{% for tshirt in tshirts %}
-<img src="{{tshirt.small_url}}" />
-<h6><strike>{{tshirt.max_price}}</strike>{{tshirt.launch_price}}</h6>
-<hr/>
-{%endfor%}
+<html>
+	<head>
+		<link href="/common.css" rel="stylesheet" type="text/css">
+		<title>Add Test T-shirt</title>
+		<style>
+			input[type="radio"]{
+				opacity:0;
+			}
+
+			input[type="radio"]:checked + label.size_label{
+				background: #0091ea;
+				background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+				filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);
+				transition: background-color 2s;
+				color:white;
+			}
+			
+			label.size_label{
+				padding:1.2%;	
+				border:1px solid grey;
+				color:white;
+				cursor:pointer;
+				font-size:x-large;
+				background-color:#bbdefb;
+				font-weight:lighter;
+				color:#424242;
+			}
+			label.size_label:hover{
+				background-color:#42a5f5;
+				transition:background-color 0.5s;
+			}
+			#amount_h4,#t_title{
+				font-weight:lighter;
+				padding-left:3%;
+				color:#212121;
+				font-size:xx-large;
+			}
+			#t_sub_title,#t_sub_sub{
+				font-size:large;
+				padding-left:4%;
+				font-weight:400;
+			}
+		</style>
+	</head>
+<body>
+	<div class="container">	
+		<div class="row">
+			<div class="col-lg-2">
+			</div>
+
+			<div class="col-lg-4">
+			</div>
+			
+			<div class="col-lg-6">
+				<div class="row">
+					<h1 id="t_title">Friends Chandler Sarcastic Comment T-Shirt</h1>
+					<h2 id="t_sub_title">Mens Printed T-shirt</h2>
+					<h3 id="t_sub_sub">White Cotton Jersey Tshirt | India</h2>
+				</div>
+				<div class="row">
+					<h4 id="amount_h4">Rs. 449</h4>
+				</div>
+				<div class="row">
+					<input type="radio" name="tshirt_size" value="small" id="small_size_id" />
+					<label for="small_size_id" class="size_label">S</label>
+					<input type="radio" name="tshirt_size" value="medium" id="medium_size_id" />
+					<label for="medium_size_id" class="size_label">M</label>
+					<input type="radio" name="tshirt_size" value="large" id="large_size_id" />
+					<label for="large_size_id" class="size_label">L</label>
+					<input type="radio" name="tshirt_size" value="xl" id="xl_size_id" />
+					<label for="xl_size_id" class="size_label">XL</label>
+					<input type="radio" name="tshirt_size" value="2xl" id="xl2_size_id" />
+					<label for="xl2_size_id" class="size_label">2XL</label>
+					<input type="radio" name="tshirt_size" value="3xl" id="xl3_size_id" />
+					<label for="xl3_size_id" class="size_label">3XL</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
