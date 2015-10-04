@@ -72,4 +72,4 @@ def show_all():
 	tshirts = session.query(ggnt_tshirt_test).all()
 	return render_template('show_test_tshirts.html',tshirts=tshirts)
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host='0.0.0.0',debug=True)

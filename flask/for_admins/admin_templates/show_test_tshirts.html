@@ -121,9 +121,6 @@
 				padding:3%;
 				font-size:xx-large;
 			}
-			#main_t img{
-				width:100%;
-			}
 			#avail_cols{
 				margin-top:5px;
 				padding:20px 5px 10px 5px;
@@ -217,6 +214,7 @@
 			}
 			.sq_b,.sq_b_w{
 				border:1px solid #e0e0e0;
+				display:inline-block;
 			}
 			.sq_b_w{
 				width:28px;
@@ -229,11 +227,11 @@
 				padding:5px 50px;
 				text-align:left!important;
 			}
-			#t_row > .col-lg-4,#t_row > .col-lg-6{
+			#t_row > .col-lg-8{
 				border-left:2px solid #e0e0e0;
 			}
-			#t_row > div.col-lg-2,#t_row > div.col-lg-6,#t_row > div.col-lg-4{
-				height:520px;
+			#t_row > div.col-lg-8,#t_row > div.col-lg-4{
+				height:550px;
 			}
 			#cod_row{
 				margin:10px 0px;
@@ -286,6 +284,39 @@
 			#check_btn,#plus_btn{
 				border-radius:0px 5px 5px 0px;
 			}
+			.gal_th{
+				margin:10px 0px;
+			}
+			.gal_th .col-lg-4 img,.gal_th .col-md-4 img{
+				height:120px;
+				width:80px;
+			}
+			#main_t.col-lg-12 img,#main_t.col-md-12 img{
+				width:400px;
+				height:450px;
+			}
+			@media (max-width:768px){
+				#t_row .col-xs-12{
+					width:400px;
+					height:450px;
+					overflow-x:scroll;
+					overflow-y:hidden;
+					white-space:nowrap;
+					box-sizing:border-box;
+				}
+				#t_row  img{
+					height:450px;
+					width:auto;
+					display:inline-block;
+					max-width:400px;
+				}
+				.xs-ib{
+					display:inline-block;
+				}
+				.xs-none{
+					display:none;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -300,25 +331,35 @@
 				</ul>
 			</div>
 			<div class="row" id="t_row">
-				<div class="col-lg-2">
-				</div>
-
-				<div class="col-lg-4">
-					<div id="main_t">
-						<img src="http://i3.cpcache.com/product/1308841414/sarcastic_advice_dark_tshirt.jpg" />
+				<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+					<div class="col-lg-12 col-md-12 col-sm-8 xs-ib">
+						<div id="main_t" class="col-lg-12 col-md-12 col-sm-12 xs-ib">
+							<img class="img-responsive" src="https://files.bewakoof.com/uploads/product_additional_images/thumbs480_540/1439903659_dark_knight_guys_tshirt_design.jpg" />
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-4 gal_th xs-ib">
+						<div class="col-lg-4 col-md-4 col-sm-12 xs-ib">
+							<img class="img-responsive"src="https://files.bewakoof.com/uploads/product_additional_images/thumbs480_540/1439903659_dark_knight_guys_tshirt_full.jpg" />
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 xs-ib">
+							<img class="img-responsive"src="https://files.bewakoof.com/uploads/product_additional_images/thumbs480_540/1439903659_dark_knight_guys_tshirt_design.jpg">
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-12 xs-none">
+							<img class="img-responsive"src="https://files.bewakoof.com/uploads/products/thumbs480_540/1439903636_dark_knight_guys_tshirt_main.jpg">
+						</div>
 					</div>
 				</div>
 				
-				<div class="col-lg-6">
-					<div class="row">
+				<div class="col-lg-7 col-md-7 col-sm-12">
+					<div class="col-lg-12 col-md-12 col-sm-12">
 						<h1 id="t_title">Friends Chandler Sarcastic Comment T-Shirt</h1>
-						<h2 id="t_sub_title">Mens Printed T-shirt</h2>
-						<h3 id="t_sub_sub">Black Cotton Tshirt | Buy Online in India</h2>
+						<h2 id="t_sub_title" class="sm_none">Mens Printed T-shirt</h2>
+						<h3 id="t_sub_sub" class="sm_none">Black Cotton Tshirt | Buy Online in India</h2>
 					</div>
-					<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-4 sm-0p sm-txt-c">
 						<h4 id="amount_h4">Rs. 449</h4>
 					</div>
-					<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-6 sm-0p"> 
 						<input type="radio" name="tshirt_size" value="small" id="small_size_id" />
 						<label for="small_size_id" class="size_label">S</label>
 						<input type="radio" name="tshirt_size" value="medium" id="medium_size_id" />
@@ -332,45 +373,45 @@
 						<input type="radio" name="tshirt_size" value="3xl" id="xl3_size_id" />
 						<label for="xl3_size_id" class="size_label">3XL</label>
 					</div>
-					<div class="row" id="size_chart">
-						<div class="col-lg-3 sm">Show Size Chart</div>
+					<div class="col-lg-12 col-md-12 col-sm-2 sm-0p" id="size_chart">
+						<div class="col-lg-6 col-md-6 col-sm-12 sm sm-xs">Show Size Chart</div>
 					</div>
-					<div class="row" id="cod_row">
-						<div class="col-lg-8 sm">This Product will be delivered in 2 to 4 Business days</div>
-						<div class="col-lg-4 sm">COD is Available.</div>
+					<div class="col-lg-12 col-md-12 col-sm-12" id="cod_row">
+						<div class="col-lg-8 col-md-8 col-sm-8 sm">This Product will be delivered in 2 to 4 Business days</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 sm">COD is Available.</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="row">
-								<span class="col-lg-6 rob_400 q_sq">Quantity</span> 
-								<input type="button" class="col-lg-2 q_sq sq_b_w" id="minus_btn" value="-">
-								<label class="col-lg-2 q_sq sq_b_w" for="quantity_id">1</label>
-								<input type="button" class="col-lg-2 q_sq sq_b_w" value="+" id="plus_btn">
+					<div class="col-lg-12 col-md-12">
+						<div class="col-lg-4 col-md-4 col-sm-4">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<span class="col-lg-6 col-md-6 rob_400 q_sq">Quantity</span> 
+								<input type="button" class="col-lg-2 col-md-2 q_sq sq_b_w" id="minus_btn" value="-">
+								<label class="col-lg-2 col-md-2 q_sq sq_b_w" for="quantity_id">1</label>
+								<input type="button" class="col-lg-2 col-md-2 q_sq sq_b_w" value="+" id="plus_btn">
 
-								<input type="number" class="col-lg-2 hide" value="1" id="quantity_id" size="1" name="quantity"/>
+								<input type="number" class="col-lg-2 col-md-2 hide" value="1" id="quantity_id" size="1" name="quantity"/>
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<div class="row">
-								<label class="col-lg-5 rob_400 q_sq" for="pincode_id">COD Availability</label>
-								<input type="number" class="col-lg-4 q_sq sq_b" placeholder="Pin Code" name="pin_code" value="" id="pincode_id"/>
-								<input type="button" class="col-lg-3 q_sq sq_b" value="Check" id="check_btn">
+						<div class="col-lg-6 col-md-6 col-sm-8">
+							<div class="col-lg-12 col-md-12 col-sm-12">
+								<label class="col-lg-5 col-md-5 col-sm-5 rob_400 q_sq" for="pincode_id">COD Availability</label>
+								<input type="number" class="col-lg-4 col-md-4 col-sm-4 q_sq sq_b" placeholder="Pin Code" name="pin_code" value="" id="pincode_id"/>
+								<input type="button" class="col-lg-3 col-md-3 col-sm-3 q_sq sq_b" value="Check" id="check_btn">
 							</div>
 						</div>
 					</div>
-					<div class="row" id="avail_cols">
-						<div class="col-lg-12 rob_400" id="av_cols_txt">Select T-Shirt Color</div>
-						<div class="col-lg-1">
+					<div class="col-lg-12 col-md-12 col-sm-12" id="avail_cols">
+						<div class="col-lg-12 col-md-12 col-sm-12 rob_400" id="av_cols_txt">Select T-Shirt Color</div>
+						<div class="col-lg-1 col-md-1 col-sm-2">
 							<input type="radio" value="black" name="selected_col" id="black_cl" class="dark_cl" checked>
 							<label style="background-color:black;" for="black_cl"></label>
 							<span>black</span>
 						</div>
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-2">
 							<input type="radio" value="white" name="selected_col" id="white_cl">
 							<label style="background-color:#d8d8d8;" for="white_cl"></label>
 							<span>white</span>
 						</div>
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-2">
 							<input type="radio" value="yellow" name="selected_col" id="yellow_cl">
 							<label style="background-color:#ffeb3b;" for="yellow_cl"></label>
 							<span>yellow</span>
@@ -412,11 +453,11 @@
 							<span>maroon</span>
 						</div>-->
 					</div>
-					<div class="row" id="btns_row">
-						<div class="col-lg-6">
+					<div class="col-lg-12 col-md-12 col-sm-12" id="btns_row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
 							<input type="button" value="Add To Cart" class="imp_btns" id="cart_btn"/>
 						</div>
-						<div class="col-lg-6">
+						<div class="col-lg-6 col-md-6 col-sm-6">
 							<input type="button" value="Add To Wishlist  &#10084;" class="imp_btns" id="wish_btn"/>
 						</div>
 					</div>
